@@ -14,31 +14,39 @@ public static class DbSeeder
 
         var kari = new User
         {
-            Email = "kari@knowit.no",
-            Role = UserRole.Admin,
+            Email = "kari@example.no",
+            Role = UserRole.Approver,
             UserInfo = new UserInfo { FirstName = "Kari", LastName = "Nordmann", PhoneNumber = "+47 900 00 001" }
         };
 
         var ola = new User
         {
-            Email = "ola@knowit.no",
+            Email = "ola@example.no",
             Role = UserRole.Approver,
             UserInfo = new UserInfo { FirstName = "Ola", LastName = "Hansen" }
         };
 
         var ingrid = new User
         {
-            Email = "ingrid@knowit.no",
+            Email = "ingrid@example.no",
             Role = UserRole.Viewer,
             UserInfo = new UserInfo { FirstName = "Ingrid", LastName = "Hans" }
         };
+        
+        var karim = new User
+        {
+            Email = "karim@example.no",
+            Role = UserRole.Admin,
+            UserInfo = new UserInfo { FirstName = "karim", LastName = "Daher" }
+        };
 
-        db.Users.AddRange(kari, ola, ingrid);
+        db.Users.AddRange(kari, ola, ingrid, karim);
 
         var hasher = new PasswordHasher<User>();
         kari.PasswordHash = hasher.HashPassword(kari, "Kari123!");
         ola.PasswordHash = hasher.HashPassword(ola, "Ola123!");
         ingrid.PasswordHash = hasher.HashPassword(ingrid, "Ingrid123!");
+        karim.PasswordHash = hasher.HashPassword(karim, "Karim123!");
 
 
         var office = new Invoice { RefId = "SUP-1001", Kid = "1234567890", Amount = 12500m, DueDate = DateTime.UtcNow.AddDays(14), User = kari };
