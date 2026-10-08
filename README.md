@@ -2,8 +2,6 @@
 
 A REST API for approving supplier invoices inside a company. Employees log in, see the invoices assigned to them, and approve, reject, forward or comment on them. Admins can see everything and delete invoices that were not approved.
 
-It is a rebuild of my bachelor project (an invoice approval app for Microsoft Teams), written from scratch to learn ASP.NET Core properly.
-
 ## Tech stack
 
 - **.NET 8 / ASP.NET Core** Web API with controllers
