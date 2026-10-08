@@ -1,5 +1,7 @@
 # Invoice Approval API
 
+[![CI](https://github.com/abooda1990/InvoiceApi/actions/workflows/ci.yml/badge.svg)](https://github.com/abooda1990/InvoiceApi/actions/workflows/ci.yml)
+
 A REST API for approving supplier invoices inside a company. Employees log in, see the invoices assigned to them, and approve, reject, forward or comment on them. Admins can see everything and delete invoices that were not approved.
 
 ## Tech stack
